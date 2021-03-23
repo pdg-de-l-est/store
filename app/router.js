@@ -10,4 +10,8 @@ Router.map(function () {
   this.route('users', function() {
     this.route('add');
   });
+  this.route('products', function() {
+    this.route('add');
+    this.route('update',{path:'update/:product_id'});
+  });
 });
