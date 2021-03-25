@@ -1,7 +1,14 @@
 {{page-title "Index"}}
-<form class="ui inline form" {{action "login" @model on="submit"}}>
-  <Input class="ui input" type="email" @value={{@model.email}} placeholder="Votre email"/>
-  <Input class="ui input" type="password" @value={{@model.password}} placeholder="Votre mot de passe"/>
-  <button class="ui fluid blue button" type="submit">Se connecter</button>
-</form>
+<div class="ui one column stackable center aligned page grid">
+  <div class="column twelve wide centreLogin">
+    <form class="ui inline form formLogin" {{action "login" @model on="submit"}}>
+      <h2 class="ui center aligned icon header">
+        Page de connexion
+      </h2>
+      <Input class="ui input" type="email" @value={{@model.email}} placeholder="Votre email"/>
+      <Input class="ui input" type="password" @value={{@model.password}} placeholder="Votre mot de passe"/>
+      <button class="ui fluid blue button" type="submit">Se connecter</button>
+    </form>
+  </div>
+</div>
 {{outlet}}
