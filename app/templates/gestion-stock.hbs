@@ -2,7 +2,11 @@
 <div style="background-color:#333;border-radius:10px;border:solid white 10px;font-size: 30px;width:200px;">
   <ul class="list-group list-group-flush">
     {{#each @model as |section|}}
-      <li class="list-group-item"><button class="btn btn-light"{{action "select" on click}} @value={{section.id}}>{{section.name}}</button></li>
+      <li class="list-group-item">
+        <a class="btn btn-light" href="../../gestionStock/section/{{section.id}}">
+          {{section.name}}
+        </a>
+      </li>
     {{/each}}
   </ul>
 </div>

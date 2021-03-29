@@ -14,14 +14,12 @@ Router.map(function () {
     this.route('add');
     this.route('update', { path: 'update/:product_id' });
   });
-<<<<<<< HEAD
   this.route('store', function() {
     this.route('add');
     this.route('addProduct');
     this.route('edit');
   });
-=======
-  this.route('gestionStock');
-  this.route('store');
->>>>>>> b060d80e829908dbcc0bb1df2a20f717bdf9face
+  this.route('gestionStock', function () {
+    this.route('section', { path: 'section/:section_id' });
+  });
 });
