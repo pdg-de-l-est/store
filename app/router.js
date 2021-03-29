@@ -14,6 +14,8 @@ Router.map(function () {
     this.route('add');
     this.route('update', { path: 'update/:product_id' });
   });
-  this.route('gestionStock');
+  this.route('gestionStock', function () {
+    this.route('section', { path: 'section/:section_id' });
+  });
   this.route('store');
 });
