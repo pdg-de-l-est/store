@@ -1,0 +1,9 @@
+{{page-title "GestionStock"}}
+<div style="background-color:#333;border-radius:10px;border:solid white 10px;font-size: 30px;width:200px;">
+  <ul class="list-group list-group-flush">
+    {{#each @model as |section|}}
+      <li class="list-group-item"><button class="btn btn-light"{{action "select" on click}} @value={{section.id}}>{{section.name}}</button></li>
+    {{/each}}
+  </ul>
+</div>
+{{outlet}}
