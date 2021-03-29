@@ -11,3 +11,16 @@
 body{
   background-color:#444;
 }
+.centreLogin{
+  margin-top: 20rem;
+}
+
+.formLogin{
+  padding:2rem;
+  background-color: #888;
+  border-radius: 10px;
+}
+
+body{
+  background-color:#444;
+}
