@@ -3,13 +3,15 @@
   <form class="ui form" {{action "save" @model on="submit"}}>
     <div class="field">
       <label>Nom de la section</label>
-      <Input @value={{@model.name}} type="text" name="nom-section" placeholder="Nom de la section"/>
+      <Input @value={{@model.name}} type="text" name="nom-section" required="required" placeholder="Nom de la section"/>
     </div>
     <div class="field">
       <label>Description</label>
-      <Textarea @value={{@model.description}} name="description" placeholder="Description"/>
+      <Textarea @value={{@model.description}} name="description" required="required" placeholder="Description"/>
     </div>
     <button class="ui button" type="submit">Valider</button>
+    <a href="../../store/"><div class="ui button">Annuler</div></a>
   </form>
+
 </div>
 {{outlet}}

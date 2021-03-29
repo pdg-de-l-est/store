@@ -1,2 +1,18 @@
 {{page-title "Edit"}}
+<div class="ui segment">
+  <form class="ui form" {{action "edit" @model.sectionToEdit.id on="submit"}}>
+    <div class="field">
+      <label>Nom de la section</label>
+      <Input @value={{@model.name}} type="text" name="nom-section" required="required" placeholder="{{@model.sectionToEdit.name}}"
+             value="{{@model.sectionToEdit.name}}"/>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <Textarea @value={{@model.description}} name="description" required="required" placeholder="{{@model.sectionToEdit.description}}"
+      value="{{@model.sectionToEdit.description}}"/>
+    </div>
+    <button class="ui button" type="submit">Modifier</button>
+    <a href="../../store/"><div class="ui button">Annuler</div></a>
+  </form>
+</div>
 {{outlet}}

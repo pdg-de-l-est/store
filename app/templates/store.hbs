@@ -8,6 +8,7 @@
       <th>Description</th>
       <th class="sectionButtonStore"></th>
       <th></th>
+      <th></th>
     </thead>
     <tbody>
     {{#each @model.sections as |section|}}
@@ -19,6 +20,18 @@
             <button class="ui active button">
               <i class="eye icon"></i>
               Détails
+            </button>
+          </a>
+        </td>
+        <td>
+          <button {{action "delete" section.id}} class="circular ui icon red button">
+            <i class="icon delete"></i>
+          </button>
+        </td>
+        <td>
+          <a href="../../store/edit/{{section.id}}">
+            <button class="circular ui icon green button">
+              <i class="icon edit"></i>
             </button>
           </a>
         </td>

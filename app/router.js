@@ -14,10 +14,10 @@ Router.map(function () {
     this.route('add');
     this.route('update', { path: 'update/:product_id' });
   });
-  this.route('store', function() {
+  this.route('store', function () {
     this.route('add');
     this.route('addProduct');
-    this.route('edit');
+    this.route('edit', { path: 'edit/:section_id' });
   });
   this.route('gestionStock', function () {
     this.route('section', { path: 'section/:section_id' });
