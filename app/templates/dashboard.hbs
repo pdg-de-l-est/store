@@ -1,15 +1,48 @@
 {{page-title "Dashboard"}}
-<div class="ui label">{{@model.connected.email}}</div>
-<LinkTo class="ui button" @route="users.add">Ajouter utilisateur</LinkTo>
-{{#if @model.deleted}}
-  <div class="ui success icon message">
-    <i class="ui circle remove icon"></i>
-    Utilisateur supprimé : {{@model.deleted.name}}
-  </div>
-{{/if}}
-<ul>
-        {{#each @model.connected.orders as |order|}}
-          <li>{{order.dateCreation}} {{order.status}}</li>
-        {{/each}}
-</ul>
+  {{#each @model.employees as |employee|}}
+    {{#if (eq @model.connected.email employee.email)}}
+      <div><h1>Employé : {{employee.name}}</h1></div>
+      <div class="ui segment">
+        <table class="ui striped table">
+          <thead>
+          <th class="numCommande">N° Commande</th>
+          <th>Date Création</th>
+          <th>Statut</th>
+          <th class="sectionButtonStore"></th>
+          <th></th>
+          <th></th>
+          </thead>
+          <tbody>
+          {{#each employee.orders as |order|}}
+            <tr>
+              <td>{{order.id}}</td>
+              <td style="font-size: 11px">{{order.dateCreation}}</td>
+              <td>{{order.status}}</td>
+              <td>
+                <a href="../../dashboard/detail-commande/{{order.id}}" >
+                  <button class="ui active button">
+                    <i class="eye icon"></i>
+                    Détails
+                  </button>
+                </a>
+              </td>
+              <td>
+                <button {{action "delete" section.id}} class="circular ui icon red button">
+                  <i class="icon delete"></i>
+                </button>
+              </td>
+              <td>
+                <a href="../../store/edit/{{section.id}}">
+                  <button class="circular ui icon green button">
+                    <i class="icon edit"></i>
+                  </button>
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{/if}}
+  {{/each}}
 {{outlet}}

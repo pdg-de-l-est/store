@@ -22,5 +22,7 @@ Router.map(function () {
   this.route('gestionStock', function () {
     this.route('section', { path: 'section/:section_id' });
   });
-  this.route('dashboard');
+  this.route('dashboard', function () {
+    this.route('detail-commande', { path: 'detail-commande/:order_id' });
+  });
 });
