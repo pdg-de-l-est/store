@@ -1,14 +1,14 @@
-{{page-title "Store"}}
+{{page-title "Index"}}
 <div class="ui label">{{@model.connected.email}}</div>
-<div class="ui segment">
+<div class="ui blue segment">
   <LinkTo class="ui button" @route="store.add">Ajouter section</LinkTo>
   <table class="ui striped table">
     <thead>
-      <th class="sectionNameStore">Section</th>
-      <th>Description</th>
-      <th class="sectionButtonStore"></th>
-      <th></th>
-      <th></th>
+    <th class="sectionNameStore">Section</th>
+    <th>Description</th>
+    <th class="sectionButtonStore"></th>
+    <th></th>
+    <th></th>
     </thead>
     <tbody>
     {{#each @model.sections as |section|}}
@@ -16,7 +16,7 @@
         <td>{{section.name}}</td>
         <td style="font-size: 11px">{{section.description}}</td>
         <td>
-          <a href="http://www.google.com" target="_blank">
+          <a href="../../store/detail/{{section.id}}">
             <button class="ui active button">
               <i class="eye icon"></i>
               Détails

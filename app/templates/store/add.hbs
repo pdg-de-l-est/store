@@ -1,6 +1,7 @@
 {{page-title "Add"}}
-<div class="ui segment">
+<div class="ui teal segment">
   <form class="ui form" {{action "save" @model on="submit"}}>
+    <h2>Ajouter une section</h2>
     <div class="field">
       <label>Nom de la section</label>
       <Input @value={{@model.name}} type="text" name="nom-section" required="required" placeholder="Nom de la section"/>
@@ -12,6 +13,5 @@
     <button class="ui button" type="submit">Valider</button>
     <a href="../../store/"><div class="ui button">Annuler</div></a>
   </form>
-
 </div>
 {{outlet}}
