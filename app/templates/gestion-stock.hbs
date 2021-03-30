@@ -1,5 +1,5 @@
 {{page-title "GestionStock"}}
-<div style="background-color:#333;font-size: 30px;width:200px;float:left;">
+<div style="float:left;">
   <ul class="list-group list-group-flush">
     {{#each @model as |section|}}
       <li class="list-group-item">
@@ -9,5 +9,11 @@
       </li>
     {{/each}}
   </ul>
+  <div style="margin-left:3rem" class="ui vertical animated button" tabindex="0">
+    <div class="hidden content">Modifier</div>
+    <div class="visible content">
+      <i class="edit icon"></i>
+    </div>
+  </div>
 </div>
 {{outlet}}

@@ -3,19 +3,19 @@
 {{!-- The following component displays Ember's default welcome message. --}}
 {{!-- Feel free to remove this! --}}
 <div>
-  <div class="ui secondary pointing menu">
-    <a class="item" href="../gestionStock">
+  <div class="ui inverted secondary pointing menu">
+    <a class="ui item" href="../gestionStock">
       Gestion du Stock
     </a>
-    <a class="item" href="../../../store">
+    <a class="ui item" href="../../../store">
       Gestion du Store
     </a>
-    <a class="item" href="../dashboard">
+    <a class="ui item" href="../dashboard">
       Gestion des Commandes
     </a>
     <div class="right menu">
       <a class="ui item">
-        Logout
+        <div class="ui label">{{@model.connected.email}}</div>
       </a>
     </div>
   </div>

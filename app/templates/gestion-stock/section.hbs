@@ -1,28 +1,30 @@
 {{page-title "Section"}}
-<div class="ui five cards">
+<div class="ui six cards">
   {{#each @model.section.products as |product|}}
     <div class="card" style="float: left">
       <div class="content">
         {{product.name}}
+        <span class="right floated">
+          <div class="ui checkbox">
+            <input type="checkbox" name="example">
+            <label></label>
+          </div>
+        </span>
       </div>
-      <div class="image">
+      <div class="image" style="height: 200px;margin: auto;">
         <img src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />
       </div>
       <div class="content">
         <span class="right floated">
+          <div class="ui vertical animated button" tabindex="0">
+            <div class="hidden content">Modifier</div>
+            <div class="visible content">
+              <i class="edit icon"></i>
+            </div>
+          </div>
         </span>
         <i class="box icon"></i>
         {{product.stock}}
-      </div>
-      <div class="content">
-        <span class="left floated">
-        <form class="ui form" {{action "update" @model on="submit"}}>
-        <div class="ui action input">
-          <input type="text" required="required" placeholder="" >
-          <button class="ui button" type="submit">+</button>
-        </div>
-        </form>
-        </span>
       </div>
     </div>
   {{/each}}
