@@ -22,4 +22,5 @@ Router.map(function () {
   this.route('gestionStock', function () {
     this.route('section', { path: 'section/:section_id' });
   });
+  this.route('dashboard');
 });

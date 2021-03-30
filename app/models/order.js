@@ -4,4 +4,5 @@ export default class OrderModel extends Model {
   @attr('string') dateCreation;
   @attr('string') status;
   @belongsTo('user') user;
+  @belongsTo('employee') employee;
 }

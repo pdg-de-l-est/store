@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { action, set } from '@ember/object';
 import RSVP from 'rsvp';
-import AbstractRouteRoute from "./abstract-route";
+import AbstractRouteRoute from './abstract-route';
 
 export default class UsersRoute extends AbstractRouteRoute {
   model() {
