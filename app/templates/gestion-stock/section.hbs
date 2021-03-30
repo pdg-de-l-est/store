@@ -1,0 +1,30 @@
+{{page-title "Section"}}
+<div class="ui five cards">
+  {{#each @model.section.products as |product|}}
+    <div class="card" style="float: left">
+      <div class="content">
+        {{product.name}}
+      </div>
+      <div class="image">
+        <img src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />
+      </div>
+      <div class="content">
+        <span class="right floated">
+        </span>
+        <i class="box icon"></i>
+        {{product.stock}}
+      </div>
+      <div class="content">
+        <span class="left floated">
+        <form class="ui form" {{action "update" @model on="submit"}}>
+        <div class="ui action input">
+          <input type="text" required="required" placeholder="" >
+          <button class="ui button" type="submit">+</button>
+        </div>
+        </form>
+        </span>
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{outlet}}
