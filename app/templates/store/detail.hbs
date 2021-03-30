@@ -1,0 +1,40 @@
+{{page-title "Detail"}}
+<!--<h4 class="ui horizontal divider"><div class="ui teal big label"><i class="tag icon"></i>  Section : {{@model.detailSection.name}}</div></h4>-->
+<!--<div class="ui seven cards">-->
+<!--  {{#each @model.detailSection.products as |product|}}-->
+<!--    <div class="card">-->
+<!--      <div class="content">-->
+<!--        {{product.name}}-->
+<!--      </div>-->
+<!--      <div class="image" style="height: 200px;margin: auto;">-->
+<!--        <img class="ui top aligned image" src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />-->
+<!--      </div>-->
+<!--      <div class="meta">-->
+<!--       Prix :  {{product.price}}-->
+<!--      </div>-->
+<!--      <div class="ui divider"></div>-->
+<!--      <div class="description">-->
+<!--        <p>{{product.comments}}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  {{/each}}-->
+<!--</div>-->
+<div class="ui seven cards">
+  {{#each @model.detailSection.products as |product|}}
+    <div class="card" style="float: left">
+      <div class="content">
+        {{product.name}}
+      </div>
+      <div class="image" style="height: 200px;margin: auto;">
+        <img src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />
+      </div>
+      <div class="meta">
+        Prix :  {{product.price}}
+      </div>
+      <div class="content">
+        {{product.comments}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{outlet}}

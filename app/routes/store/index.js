@@ -1,8 +1,8 @@
-import AbstractRouteRoute from './abstract-route';
+import AbstractRouteRoute from "../abstract-route";
 import RSVP from 'rsvp';
 import { action } from '@ember/object';
 
-export default class StoreRoute extends AbstractRouteRoute {
+export default class StoreIndexRoute extends AbstractRouteRoute {
   model() {
     return RSVP.hash({
       sections: this.store.findAll('section'),

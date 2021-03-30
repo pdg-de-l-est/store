@@ -10,12 +10,8 @@ export default class StoreEditRoute extends Route {
   }
 
   @action edit(sectionEditing) {
-    let sec = this.store
-      .findRecord('section', sectionEditing)
-      .then(function (post) {
-        post.name = sectionEditing.name;
-        post.description = sectionEditing.description;
-      });
-    sec.save();
+    sectionEditing.save().then(() => {
+      this.transitionTo('store');
+    });
   }
 }
