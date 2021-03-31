@@ -1,38 +1,36 @@
 {{page-title "Detail"}}
-<!--<h4 class="ui horizontal divider"><div class="ui teal big label"><i class="tag icon"></i>  Section : {{@model.detailSection.name}}</div></h4>-->
-<!--<div class="ui seven cards">-->
-<!--  {{#each @model.detailSection.products as |product|}}-->
-<!--    <div class="card">-->
-<!--      <div class="content">-->
-<!--        {{product.name}}-->
-<!--      </div>-->
-<!--      <div class="image" style="height: 200px;margin: auto;">-->
-<!--        <img class="ui top aligned image" src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />-->
-<!--      </div>-->
-<!--      <div class="meta">-->
-<!--       Prix :  {{product.price}}-->
-<!--      </div>-->
-<!--      <div class="ui divider"></div>-->
-<!--      <div class="description">-->
-<!--        <p>{{product.comments}}</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  {{/each}}-->
-<!--</div>-->
-<div class="ui seven cards">
+<h4 class="ui horizontal divider header">
+  <i class="box icon"></i>
+  Section : {{@model.detailSection.name}}
+</h4>
+<div>
+  <LinkTo class="ui button" @route="store.index">Retour aux sections</LinkTo>
+  <a href="../../../store/add-product/{{@model.detailSection.id}}"><button class="ui button">Ajouter un produit</button></a>
+</div>
+<div class="ui seven cards cartesSection">
   {{#each @model.detailSection.products as |product|}}
-    <div class="card" style="float: left">
+    <div class="card">
       <div class="content">
         {{product.name}}
       </div>
-      <div class="image" style="height: 200px;margin: auto;">
+      <div class="image" style="height: 200px">
         <img src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />
       </div>
       <div class="meta">
-        Prix :  {{product.price}}
+        Prix :  {{product.price}}€
       </div>
       <div class="content">
         {{product.comments}}
+      </div>
+      <div class="content">
+        <a href="../../store/edit-product/{{product.id}}">
+          <button class="circular ui icon green button">
+            <i class="icon edit"></i>
+          </button>
+        </a>
+        <button {{action "delete" product.id}} class="circular ui icon red button">
+          <i class="icon delete"></i>
+        </button>
       </div>
     </div>
   {{/each}}

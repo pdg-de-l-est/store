@@ -1,0 +1,25 @@
+{{page-title "EditProduct"}}
+<div class="ui green segment addForm">
+  <form class="ui form" {{action "edit" @model.productToEdit on="submit"}}>
+    <h2>Modifier le produit</h2>
+    <div class="field">
+      <label>Nom du produit</label>
+      <Input @value={{@model.productToEdit.name}} type="text" name="name-produit" required="required" placeholder="{{@model.productToEdit.name}}"/>
+    </div>
+    <div class="field">
+      <label>Commentaire</label>
+      <Textarea @value={{@model.productToEdit.comments}} name="comments-produit" required="required" placeholder="{{@model.productToEdit.comments}}"/>
+    </div>
+    <div class="field">
+      <label>Prix</label>
+      <Input @value={{@model.productToEdit.price}} type="number" step="any" name="price-produit" required="required" placeholder="{{@model.productToEdit.price}}"/>
+    </div>
+    <div class="field">
+      <label>Promotion</label>
+      <Input @value={{@model.productToEdit.promotion}} type="number" step="any" name="promotion-produit" required="required" placeholder="{{@model.productToEdit.promotion}}"/>
+    </div>
+    <button class="ui button" type="submit">Modifier</button>
+    <a href="../../store/detail/{{@model.productToEdit.section.id}}"><div class="ui button">Annuler</div></a>
+  </form>
+</div>
+{{outlet}}
