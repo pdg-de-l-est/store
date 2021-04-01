@@ -27,4 +27,6 @@ Router.map(function () {
   this.route('dashboard', function () {
     this.route('detail-commande', { path: 'detail-commande/:order_id' });
   });
+  this.route('gestionEmployee');
+  this.route('acceuil');
 });

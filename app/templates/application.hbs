@@ -4,6 +4,9 @@
 {{!-- Feel free to remove this! --}}
 <div>
   <div class="ui inverted secondary pointing menu">
+    <a class="ui item" href="../../../../acceuil">
+      Acceuil
+    </a>
     <a class="ui item" href="../../../../gestionStock">
       Gestion du Stock
     </a>
@@ -13,8 +16,11 @@
     <a class="ui item" href="../../../../dashboard">
       Gestion des Commandes
     </a>
+    <a class="ui item" href="../../../../gestionEmployee">
+      Gestion des Employés
+    </a>
     {{#if @model.connected.email}}
-      <div style="margin-left: 83rem">
+      <div style="margin-left: 65rem">
         <a class="ui item" href="../../../../">
           <div class="ui label">{{@model.connected.email}}</div>
         </a>
