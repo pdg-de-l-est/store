@@ -11,7 +11,7 @@
       <Textarea @value={{@model.description}} name="description" required="required" placeholder="Description"/>
     </div>
     <button class="ui button" type="submit">Valider</button>
-    <a href="../../store/"><div class="ui button">Annuler</div></a>
+    <LinkTo class="ui button" @route="store">Annuler</LinkTo>
   </form>
 </div>
 {{outlet}}

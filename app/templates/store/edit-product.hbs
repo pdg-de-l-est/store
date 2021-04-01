@@ -1,6 +1,6 @@
 {{page-title "EditProduct"}}
 <div class="ui green segment addForm">
-  <form class="ui form" {{action "edit" @model.productToEdit on="submit"}}>
+  <form class="ui form" {{action "save" @model.productToEdit @model.productToEdit.section.id on="submit"}}>
     <h2>Modifier le produit</h2>
     <div class="field">
       <label>Nom du produit</label>
@@ -19,7 +19,7 @@
       <Input @value={{@model.productToEdit.promotion}} type="number" step="any" name="promotion-produit" required="required" placeholder="{{@model.productToEdit.promotion}}"/>
     </div>
     <button class="ui button" type="submit">Modifier</button>
-    <a href="../../store/detail/{{@model.productToEdit.section.id}}"><div class="ui button">Annuler</div></a>
+    <LinkTo class="ui button " @route="store.detail" @model={{@model.productToEdit.section.id}}>Annuler</LinkTo>
   </form>
 </div>
 {{outlet}}

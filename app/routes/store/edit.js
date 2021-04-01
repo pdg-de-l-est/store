@@ -11,7 +11,7 @@ export default class StoreEditRoute extends Route {
 
   @action edit(sectionEditing) {
     sectionEditing.save().then(() => {
-      this.transitionTo('store/detail/' + sectionEditing.section.id);
+      this.transitionTo('store.detail', sectionEditing.section.id);
     });
   }
 }

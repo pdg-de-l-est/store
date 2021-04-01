@@ -5,7 +5,7 @@
 </h4>
 <div>
   <LinkTo class="ui button" @route="store.index">Retour aux sections</LinkTo>
-  <a href="../../../store/add-product/{{@model.detailSection.id}}"><button class="ui button">Ajouter un produit</button></a>
+  <LinkTo class="ui button" @route="store.add-product" @model={{@model.detailSection.id}}>Ajouter un produit</LinkTo>
 </div>
 <div class="ui seven cards cartesSection">
   {{#each @model.detailSection.products as |product|}}
@@ -22,12 +22,8 @@
       <div class="content">
         {{product.comments}}
       </div>
-      <div class="content">
-        <a href="../../store/edit-product/{{product.id}}">
-          <button class="circular ui icon green button">
-            <i class="icon edit"></i>
-          </button>
-        </a>
+      <div class="extra content">
+        <LinkTo class="ui button circular green icon" @route="store.edit-product" @model={{product.id}}><i class="icon edit"></i></LinkTo>
         <button {{action "delete" product.id}} class="circular ui icon red button">
           <i class="icon delete"></i>
         </button>
