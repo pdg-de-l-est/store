@@ -5,13 +5,13 @@ import RSVP from 'rsvp';
 export default class StoreEditProductRoute extends Route {
   model(params) {
     return RSVP.hash({
-      productToEdit: this.store.findRecord('product', params.product_id),
+      productToEdit: this.store.findRecord('product', params.product_id,{include: 'section'}),
     });
   }
 
-  @action edit(productEditing) {
+  @action save(productEditing,idSection) {
     productEditing.save().then(() => {
-      this.transitionTo('store');
+      this.transitionTo('store.detail', idSection);
     });
   }
 }

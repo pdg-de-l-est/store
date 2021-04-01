@@ -8,10 +8,10 @@
     </div>
     <div class="field">
       <label>Description</label>
-      <Textarea @value={{@model.sectionToEdit.description}} name="description"placeholder="{{@model.sectionToEdit.description}}"/>
+      <Textarea @value={{@model.sectionToEdit.description}} name="description"placeholder="{{@model.sectionToEdit.description}}"></Textarea>
     </div>
     <button class="ui button" type="submit">Modifier</button>
-    <a href="../../store/"><div class="ui button">Annuler</div></a>
+    <LinkTo class="ui button" @route="store">Annuler</LinkTo>
   </form>
 </div>
 {{outlet}}

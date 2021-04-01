@@ -15,19 +15,10 @@
         <td>{{section.name}}</td>
         <td style="font-size: 11px">{{section.description}}</td>
         <td>
-          <a href="../../store/detail/{{section.id}}">
-            <button class="ui active button">
-              <i class="eye icon"></i>
-              Détails
-            </button>
-          </a>
+          <LinkTo class="ui button icon" @route="store.detail" @model={{section.id}}><i class="eye icon"></i> Détails</LinkTo>
         </td>
         <td>
-          <a href="../../store/edit/{{section.id}}">
-            <button class="circular ui icon green button">
-              <i class="icon edit"></i>
-            </button>
-          </a>
+          <LinkTo class="ui button circular green icon" @route="store.edit" @model={{section.id}}><i class="icon edit"></i></LinkTo>
         </td>
         <td>
           <button {{action "delete" section.id}} class="circular ui icon red button">
