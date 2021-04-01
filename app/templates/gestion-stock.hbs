@@ -1,6 +1,11 @@
 {{page-title "GestionStock"}}
-<div style="float:left;">
+<div style="float:left;width:19rem;background-color: white">
   <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <a class="btn btn-light">
+        Sections :
+      </a>
+    </li>
     {{#each @model as |section|}}
       <li class="list-group-item">
         <a class="btn btn-light" href="../../gestionStock/section/{{section.id}}">
@@ -8,6 +13,8 @@
         </a>
       </li>
     {{/each}}
+    <li class="list-group-item" style="height: 2000px">
+    </li>
   </ul>
 </div>
 {{outlet}}
