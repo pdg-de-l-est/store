@@ -17,7 +17,7 @@ Router.map(function () {
   this.route('store', function () {
     this.route('add');
     this.route('edit', { path: 'edit/:section_id' });
-    this.route('detail', { path: 'detail/:section_id'});
+    this.route('detail', { path: 'detail/:section_id' });
   });
   this.route('gestionStock', function () {
     this.route('section', { path: 'section/:section_id' });
