@@ -1,29 +1,34 @@
 {{page-title "AddProduct"}}
 <div class="ui teal segment addForm">
-  <form class="ui form" {{action "save" @model on="submit"}}>
+  <form class="ui form" {{action "save" @model.product @model on="submit"}}>
     <h2>Ajouter un produit</h2>
     <div class="field">
       <label>Nom du produit</label>
-      <Input @value={{@model.name}} type="text" name="nom-produit" required="required" placeholder="Nom du produit"/>
+      <Input @value={{@model.product.name}} type="text" name="nom-produit" required="required" placeholder="Nom du produit"/>
     </div>
     <div class="field">
       <label>Description</label>
-      <Textarea @value={{@model.comments}} name="comments-produit" placeholder="Commentaires"/>
+      <Textarea @value={{@model.product.comments}} name="comments-produit" placeholder="Commentaires"/>
     </div>
     <div class="field">
       <label>Stock</label>
-      <Input @value={{@model.stock}} type="number" name="stock-produit" required="required" placeholder="Stock du produit"/>
+      <Input @value={{@model.product.stock}} type="number" name="stock-produit" required="required" placeholder="Stock du produit"/>
     </div>
     <div class="field">
       <label>Prix</label>
-      <Input @value={{@model.price}} type="number" name="price-produit" required="required" placeholder="Prix du produit"/>
+      <Input @value={{@model.product.price}} type="number" name="price-produit" required="required" placeholder="Prix du produit"/>
     </div>
     <div class="field">
       <label>Promotion</label>
-      <Input @value={{@model.promotion}} type="number" name="promotion-produit" placeholder="Promotion du produit"/>
+      <Input @value={{@model.product.promotion}} type="number" name="promotion-produit" placeholder="Promotion du produit"/>
+    </div>
+    <div class="field">
+      <label>Image</label>
+      <Input @value={{@model.product.image}} id="fileupload" name="myfile" type="file"/>
     </div>
     <button class="ui button" type="submit">Valider</button>
-    <a href="../../store/detail/{{@model.id}}"><div class="ui button">Annuler</div></a>
+    <LinkTo class="ui button" @route="store.detail" @model={{@model.section.id}}>Annuler</LinkTo>
   </form>
 </div>
+
 {{outlet}}
