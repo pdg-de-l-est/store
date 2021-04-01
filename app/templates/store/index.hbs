@@ -1,6 +1,5 @@
 {{page-title "Index"}}
-<div class="ui label">{{@model.connected.email}}</div>
-<div class="ui blue segment">
+<div class="segment">
   <LinkTo class="ui button" @route="store.add">Ajouter section</LinkTo>
   <table class="ui striped table">
     <thead>
@@ -24,16 +23,16 @@
           </a>
         </td>
         <td>
-          <button {{action "delete" section.id}} class="circular ui icon red button">
-            <i class="icon delete"></i>
-          </button>
-        </td>
-        <td>
           <a href="../../store/edit/{{section.id}}">
             <button class="circular ui icon green button">
               <i class="icon edit"></i>
             </button>
           </a>
+        </td>
+        <td>
+          <button {{action "delete" section.id}} class="circular ui icon red button">
+            <i class="icon delete"></i>
+          </button>
         </td>
       </tr>
     {{/each}}
