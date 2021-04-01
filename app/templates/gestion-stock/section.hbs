@@ -1,4 +1,16 @@
 {{page-title "Section"}}
+<form {{action "multiUpdate" @model.section.products this._stock on="submit"}}>
+  <div class="ui small action input" style="margin-left: 1rem">
+    <div class="ui right pointing label">
+      Ajout de stock pour plusieurs objets à la fois
+    </div>
+    <Input @value={{this._stock}} type="number" required="required" placeholder="Ajouter"/>
+    <button class="ui icon button" type="submit">
+      <i class="plus icon"></i>
+    </button>
+  </div>
+</form>
+<br>
 <div class="ui six cards">
   {{#each @model.section.products as |product|}}
     <div class="card" style="float: left">
@@ -13,7 +25,7 @@
         {{product.stock}}
         <span class="right floated">
           <div class="ui checkbox">
-            <input type="checkbox" name="example">
+            <Input type="checkbox" name="example" @checked={{product.checked}} {{action "checked" product on="change"}}/>
             <label></label>
           </div>
         </span>
@@ -22,7 +34,7 @@
         <span class="right floated">
           <form {{action "update" product stock on="submit"}}>
           <div class="ui mini action input">
-            <Input @value={{product._stock}} type="number" placeholder={{product.stock}}/>
+            <Input @value={{product._stock}} required="required" type="number" placeholder={{product.stock}}/>
             <button type="submit" class="ui vertical animated button" tabindex="0">
               <div class="hidden content">Ajouter</div>
               <div class="visible content">
