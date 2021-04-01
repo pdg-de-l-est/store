@@ -13,11 +13,24 @@
     <a class="ui item" href="../../../../dashboard">
       Gestion des Commandes
     </a>
-    <div class="right menu">
-      <a class="ui item" href="../../../../">
-        <div class="ui label">{{@model.connected.email}}</div>
-      </a>
-    </div>
+    {{#if @model.connected.email}}
+      <div style="margin-left: 83rem">
+        <a class="ui item" href="../../../../">
+          <div class="ui label">{{@model.connected.email}}</div>
+        </a>
+      </div>
+      <div class="right menu">
+        <a {{action "logout" on="click"}} class="ui item" href="../../../../">
+          <div class="ui label">Logout</div>
+        </a>
+      </div>
+    {{else}}
+      <div class="right menu">
+        <a class="ui item" href="../../../../">
+          <div class="ui label">Login</div>
+        </a>
+      </div>
+    {{/if}}
   </div>
   {{outlet}}
 </div>

@@ -8,13 +8,19 @@
     </li>
     {{#each @model as |section|}}
       <li class="list-group-item">
-        <a class="btn btn-light" href="../../gestionStock/section/{{section.id}}">
+        <LinkTo class="btn btn-light" @route="gestionStock.section" @model={{section.id}}>
           {{section.name}}
-        </a>
+        </LinkTo>
       </li>
     {{/each}}
-    <li class="list-group-item" style="height: 2000px">
+    <li class="list-group-item" style="height: 2500px">
     </li>
   </ul>
+</div>
+<div id="choix" class="ui placeholder segment">
+  <div class="ui icon header">
+    <i class="search icon"></i>
+      Choisissez une section
+  </div>
 </div>
 {{outlet}}
