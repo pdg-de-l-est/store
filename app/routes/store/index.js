@@ -5,13 +5,20 @@ import { action } from '@ember/object';
 export default class StoreIndexRoute extends AbstractRouteRoute {
   model() {
     return RSVP.hash({
-      sections: this.store.findAll('section'),
-      connected: this.userAuth.user,
+      sections: this.store.findAll('section')
     });
   }
 
   @action delete(sectionDelete) {
-    let section = this.store.peekRecord('section', sectionDelete);
-    section.destroyRecord();
+    let section = this.store.findRecord('section', sectionDelete,{
+      include : 'products'
+    });
+    if(section.products.length > 0){
+      this.transitionTo('dashboard');
+    }
+    else{
+      section.destroyRecord();
+    }
   }
 }
+

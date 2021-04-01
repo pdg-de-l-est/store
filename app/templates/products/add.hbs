@@ -12,7 +12,6 @@
       {{/each}}
     </div>
   </UiDropdown>
-
   <UiDropdown class="selection" @selected={{@model.product.section}} @onChange={{fn (mut @model.product.section)}} as |execute mapper|>
     <div class="default text">Section</div>
     <i class="dropdown icon"></i>

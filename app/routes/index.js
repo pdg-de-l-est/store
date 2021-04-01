@@ -21,7 +21,7 @@ export default class IndexRoute extends Route {
           let connected = employees.firstObject;
           if (connected.password && connected.password === user.password) {
             this.userAuth.login(connected);
-            this.transitionTo('gestionStock');
+            this.transitionTo('store');
           }
         }
       });
