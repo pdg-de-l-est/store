@@ -7,6 +7,7 @@ export default class GestionStockSectionRoute extends Route {
   @tracked actualSection;
 
   model(params) {
+    document.getElementById('choix').style.display = 'none';
     this.actualSection = this.store.findRecord('section', params.section_id);
     return RSVP.hash({
       section: this.store.findRecord('section', params.section_id, {
