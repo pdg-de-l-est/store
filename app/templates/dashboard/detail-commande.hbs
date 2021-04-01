@@ -1,4 +1,19 @@
 {{page-title "DetailCommande"}}
-<h1>Préparation de commande</h1>
-Commande N°{{@model.order.id}} {{model.order.orderdetail.prepared}}
+<div class="ui segment">
+  <h1>Préparation de commande</h1>
+  Commande N°{{@model.order.id}},  {{@model.order.itemsNumber}} Produits
+
+  <div class="ui celled  ordered list">
+    {{#each @model.order.orderdetails as |orderdetail|}}
+     <div class="item">{{orderdetail.product.section.name}}
+       <div class="list">
+
+         <div class="item">{{orderdetail.product.name}}</div>
+
+       </div>
+
+     </div>
+   {{/each}}
+  </div>
+</div>
 {{outlet}}

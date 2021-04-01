@@ -9,8 +9,4 @@ export default class DashboardRoute extends AbstractRouteRoute {
       connected: this.userAuth.user,
     });
   }
-  @action remove(employee, model) {
-    set(model, 'deleted', employee);
-    employee.destroyRecord().then(() => {});
-  }
 }
