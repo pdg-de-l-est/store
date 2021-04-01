@@ -1,5 +1,5 @@
 {{page-title "Edit"}}
-<div class="ui green segment">
+<div class="ui green segment addForm">
   <form class="ui form" {{action "edit" @model.sectionToEdit on="submit"}}>
     <h2>Modifier la section</h2>
     <div class="field">
@@ -8,7 +8,7 @@
     </div>
     <div class="field">
       <label>Description</label>
-      <Textarea @value={{@model.sectionToEdit.description}} name="description" required="required" placeholder="{{@model.sectionToEdit.description}}"/>
+      <Textarea @value={{@model.sectionToEdit.description}} name="description"placeholder="{{@model.sectionToEdit.description}}"/>
     </div>
     <button class="ui button" type="submit">Modifier</button>
     <a href="../../store/"><div class="ui button">Annuler</div></a>
