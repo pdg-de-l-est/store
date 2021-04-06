@@ -9,10 +9,11 @@ export default class StoreIndexRoute extends AbstractRouteRoute {
     });
   }
 
-  @action delete(sectionDelete) {
-    let section = this.store.peekRecord('section', sectionDelete, {
-      include: 'products',
-    });
-    console.log(section.name, ' ', section.products);
+  @action delete(section) {
+    if (section.products.length > 0) {
+      this.transitionTo('users');
+    } else {
+      section.destroyRecord();
+    }
   }
 }
