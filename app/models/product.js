@@ -11,4 +11,11 @@ export default class ProductModel extends Model {
   @belongsTo('section') section;
   @hasMany('product', { inverse: null }) packs;
   @tracked checked = false;
+
+  get sectionName() {
+    if (this.section) {
+      return this.section.get('name');
+    }
+    return null;
+  }
 }
