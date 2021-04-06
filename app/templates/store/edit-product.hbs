@@ -18,8 +18,8 @@
       <label>Promotion</label>
       <Input @value={{@model.productToEdit.promotion}} type="number" step="any" name="promotion-produit" required="required" placeholder="{{@model.productToEdit.promotion}}"/>
     </div>
-    <button class="ui button" type="submit">Modifier</button>
-    <LinkTo class="ui button " @route="store.detail" @model={{@model.productToEdit.section.id}}>Annuler</LinkTo>
+    <button class="ui positive button" type="submit">Modifier</button>
+    <LinkTo class="ui negative button" @route="store.detail" @model={{@model.productToEdit.section.id}}>Annuler</LinkTo>
   </form>
 </div>
 {{outlet}}

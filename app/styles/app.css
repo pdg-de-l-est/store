@@ -36,3 +36,69 @@ body{
 .addForm{
   width:50rem;
 }
+
+.containerP{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+.containerP .boxP {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  color: #fff;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 30px;
+  transition: 0.5s;
+}
+.containerP .boxP::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(315deg,#03a9f4,#ff0058);
+}
+.containerP .boxP::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(315deg,#03a9f4,#ff0058);
+  filter: blur(30px);
+}
+.containerP .boxP span::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  pointer-events: none;
+}
+.containerP .boxP .contentP{
+  position: relative;
+  z-index: 10;
+  padding: 20px 40px;
+}
+.containerP .boxP .contentP h2{
+  font-size: 2em;
+  color: #000;
+  margin-bottom: 10px;
+}
+.containerP .boxP .contentP Input{
+  font-size:1.1em;
+  color: #000;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}

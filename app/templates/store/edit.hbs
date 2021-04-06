@@ -10,8 +10,8 @@
       <label>Description</label>
       <Textarea @value={{@model.sectionToEdit.description}} name="description"placeholder="{{@model.sectionToEdit.description}}"></Textarea>
     </div>
-    <button class="ui button" type="submit">Modifier</button>
-    <LinkTo class="ui button" @route="store">Annuler</LinkTo>
+    <button class="ui positive button" type="submit">Modifier</button>
+    <LinkTo class="ui negative button" @route="store">Annuler</LinkTo>
   </form>
 </div>
 {{outlet}}

@@ -10,8 +10,8 @@
       <label>Description</label>
       <Textarea @value={{@model.description}} name="description" required="required" placeholder="Description"/>
     </div>
-    <button class="ui button" type="submit">Valider</button>
-    <LinkTo class="ui button" @route="store">Annuler</LinkTo>
+    <button class="ui positive button" type="submit">Valider</button>
+    <LinkTo class="ui negative button" @route="store">Annuler</LinkTo>
   </form>
 </div>
 {{outlet}}

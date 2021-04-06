@@ -26,8 +26,8 @@
       <label>Image</label>
       <Input @value={{@model.product.image}} id="fileupload" name="myfile" type="file"/>
     </div>
-    <button class="ui button" type="submit">Valider</button>
-    <LinkTo class="ui button" @route="store.detail" @model={{@model.section.id}}>Annuler</LinkTo>
+    <button class="ui positive button" type="submit">Valider</button>
+    <LinkTo class="ui negative button" @route="store.detail" @model={{@model.section.id}}>Annuler</LinkTo>
   </form>
 </div>
 
