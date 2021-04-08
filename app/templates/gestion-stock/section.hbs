@@ -1,17 +1,17 @@
 {{page-title "Section"}}
 <form {{action "multiUpdate" @model.section.products this._stock on="submit"}}>
-  <div class="ui small action input" style="margin-left: 1rem">
+  <div class="ui small action input" style="top: 47px;margin-left: 266px;position: fixed;z-index: 100;background-color:white;width: 100%;border:10px white solid">
     <div class="ui right pointing label">
       Ajout de stock pour plusieurs objets à la fois
     </div>
-    <Input @value={{this._stock}} type="number" required="required" placeholder="Ajouter"/>
+    <Input @value={{this._stock}} type="number" required="required" placeholder="Ajouter" />
     <button class="ui icon button" type="submit">
       <i class="plus icon"></i>
     </button>
   </div>
 </form>
 <br>
-<div class="ui six cards">
+<div class="ui seven doubling cards" style="margin-left:266px;padding-top: 90px">
   {{#each @model.section.products as |product|}}
     <div class="card" style="float: left">
       <div class="content">
@@ -31,19 +31,15 @@
         </span>
       </div>
       <div class="content">
-        <span class="right floated">
-          <form {{action "update" product stock on="submit"}}>
+        <form {{action "update" product stock on="submit"}}>
           <div class="ui mini action input">
-            <Input @value={{product._stock}} required="required" type="number" placeholder={{product.stock}}/>
-            <button type="submit" class="ui vertical animated button" tabindex="0">
-              <div class="hidden content">Ajouter</div>
-              <div class="visible content">
-                <i class="plus icon"></i>
-              </div>
+            <Input @value={{product._stock}} style="width:70%;" required="required" type="number"
+                   placeholder={{product.stock}}/>
+            <button type="submit" style="width:30%;" class="ui button" tabindex="0">
+              <i class="plus icon"></i>
             </button>
           </div>
-          </form>
-        </span>
+        </form>
       </div>
     </div>
   {{/each}}

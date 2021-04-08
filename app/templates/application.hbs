@@ -1,6 +1,5 @@
 {{page-title "Store"}}
-<div class="nav">
-  <div class="ui inverted secondary pointing menu">
+  <div class="ui inverted secondary pointing menu" style="margin:0;position: fixed;top :0;z-index: 100;width: 100vw;background-color: #444">
     <a class="ui item" href="../../../../accueil">
       Accueil
     </a>
@@ -17,7 +16,7 @@
       Gestion des Employés
     </a>
     {{#if @model.connected.email}}
-      <div style="margin-left: 65rem">
+      <div>
         <a class="ui item" href="../../../../">
           <div class="ui label">{{@model.connected.email}}</div>
         </a>
@@ -35,5 +34,4 @@
       </div>
     {{/if}}
   </div>
-</div>
 {{outlet}}
