@@ -1,12 +1,19 @@
 {{page-title "DeleteSection"}}
-<div class="ui placeholder segment">
-  <div class="ui icon header">
-    <i class="question icon"></i>
-    La section "{{@model.sectionDelete.name}}" va être supprimée, mais elle comporte des produits, que voulez-vous faire de ces produits ?
+  <div class="ui placeholder segment" style="margin-top:53px;">
+    <div class="ui icon header">
+      <i class="question icon"></i>
+      La section "{{@model.sectionDelete.name}}" va être supprimée, mais elle comporte des produits, que voulez-vous faire de ces {{@model.sectionDelete.products.length}} produits ?
+    </div>
+    <div class="inline">
+      <div class="ui green button" {{action "deleteAll" @model.sectionDelete.id}}>Supprimer ces produits</div>
+      <LinkTo class="ui negative button" @route="store.index">Annuler</LinkTo>
+    </div>
+    {{this.percent}}
+    <UiProgress @percent="{{this.percent}}" @total="{{this.taille}}" class="teal indicating">
+      <div class="bar"></div>
+    </UiProgress>
+    {{#if this.activeImg}}
+      <img src="/images/{{this.activeImg}}.jpg" class="ui medium image">
+    {{/if}}
   </div>
-  <div class="inline">
-    <div class="ui green button" {{action "deleteAll" @model.sectionDelete.id}}>Supprimer ces produits</div>
-    <LinkTo class="ui negative button" @route="store.index">Annuler</LinkTo>
-  </div>
-</div>
 {{outlet}}

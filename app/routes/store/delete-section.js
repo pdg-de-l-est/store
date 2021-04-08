@@ -9,11 +9,23 @@ export default class StoreDeleteSectionRoute extends Route {
     });
   }
   @action deleteAll(sectionId){
-    let products = this.store.peekAll('product', { sql: 'idSection = ' + sectionId });
-    debugger;
-    products.destroyRecord();
-    let section = this.store.peekRecord('section', sectionId);
-    section.destroyRecord();
-    this.transitionTo('store.index');
+    this.store.findRecord('section', sectionId, {include: 'products', reload : true},).then((section)=>{
+      this.deleteProducts(section.products).then(()=>{
+        section.destroyRecord().then(()=>{
+          this.transitionTo('store.index');
+        });
+      });
+    });
+  }
+  async deleteProducts(products){
+    while(products.firstObject){
+      let p = products.firstObject;
+      this.controllerFor(this.routeName).set('activeImg',p.image);
+      await p.destroyRecord();
+    }
+  }
+  setupController(controller,model){
+    controller.set('taille',model.sectionDelete.products.length);
+    controller.set('products',model.sectionDelete.products);
   }
 }

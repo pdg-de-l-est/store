@@ -1,22 +1,22 @@
 {{page-title "EditProduct"}}
-<div class="ui green segment addForm">
+<div class="ui green segment addForm" style="margin-top:53px;">
   <form class="ui form" {{action "save" @model.productToEdit @model.productToEdit.section.id on="submit"}}>
     <h2>Modifier le produit</h2>
     <div class="field">
       <label>Nom du produit</label>
-      <Input @value={{@model.productToEdit.name}} type="text" name="name-produit" required="required" placeholder="{{@model.productToEdit.name}}"/>
+      <Input @value={{@model.productToEdit.name}} type="text" name="name-produit" required="required"/>
     </div>
     <div class="field">
       <label>Commentaire</label>
-      <Textarea @value={{@model.productToEdit.comments}} name="comments-produit" required="required" placeholder="{{@model.productToEdit.comments}}"/>
+      <Textarea @value={{@model.productToEdit.comments}} name="comments-produit" required="required"/>
     </div>
     <div class="field">
       <label>Prix</label>
-      <Input @value={{@model.productToEdit.price}} type="number" step="any" name="price-produit" required="required" placeholder="{{@model.productToEdit.price}}"/>
+      <Input @value={{@model.productToEdit.price}} type="number" step="any" name="price-produit" required="required"/>
     </div>
     <div class="field">
       <label>Promotion</label>
-      <Input @value={{@model.productToEdit.promotion}} type="number" step="any" name="promotion-produit" required="required" placeholder="{{@model.productToEdit.promotion}}"/>
+      <Input @value={{@model.productToEdit.promotion}} type="number" step="any" name="promotion-produit" required="required"/>
     </div>
     <button class="ui positive button" type="submit">Modifier</button>
     <LinkTo class="ui negative button" @route="store.detail" @model={{@model.productToEdit.section.id}}>Annuler</LinkTo>
