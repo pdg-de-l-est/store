@@ -1,13 +1,13 @@
 {{page-title "DetailCommande"}}
 <div class="ui segment">
   <h1>Préparation de commande</h1>
-  Commande N°{{@model.order.id}},  {{@model.order.itemsNumber}} Produits
+  Commande N°{{@model.order.id}}  <div style="float:right">{{@model.order.itemsNumber}} Produits <div class="ui toggle checkbox"><Input @type="checkbox"  /><label>Tout Préparés</label></div></div>
   <div class="ui celled  ordered list">
     {{#each this.sections as |section|}}
      <div class="item">{{section.value}}
        <div class="list">
          {{#each section.items as |od|}}
-         <div class="item">{{od.product.name}}  Quantity : {{od.quantity}}  </div>
+           <div class="item">{{od.product.name}}   Prix : {{od.product.price}} €<div style="float:right; margin: 1%">Quantity : {{od.quantity}}<div class="ui toggle checkbox"><Input @type="checkbox" checked="{{if od.prepared 'checked'}}" onclick="{{action (mut od.prepared) value="target.checked"}}"/><label>Préparé</label></div> </div></div>
          {{/each}}
        </div>
      </div>

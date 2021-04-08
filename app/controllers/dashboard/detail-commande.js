@@ -9,4 +9,6 @@ export default class DashboardDetailCommandeController extends Controller {
     super.init(...arguments);
     console.log('Test');
   }
+
+
 }
