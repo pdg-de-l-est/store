@@ -3,10 +3,12 @@
   <h1>Préparation de commande</h1>
   Commande N°{{@model.order.id}},  {{@model.order.itemsNumber}} Produits
   <div class="ui celled  ordered list">
-    {{#each @model.order.orderdetails as |orderdetail|}}
-     <div class="item">{{orderdetail.section.name}}
+    {{#each this.sections as |section|}}
+     <div class="item">{{section.value}}
        <div class="list">
-         <div class="item">{{orderdetail.product.name}}</div>
+         {{#each section.items as |od|}}
+         <div class="item">{{od.product.name}}  Quantity : {{od.quantity}}  </div>
+         {{/each}}
        </div>
      </div>
    {{/each}}
