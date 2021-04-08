@@ -21,6 +21,7 @@ Router.map(function () {
     this.route('add-product', { path: 'add-product/:section_id' });
     this.route('edit-product', { path: 'edit-product/:product_id' });
     this.route('add-pack');
+    this.route('delete-section', { path: 'delete-section/:section_id' });
   });
   this.route('gestionStock', function () {
     this.route('section', { path: 'section/:section_id' });

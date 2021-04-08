@@ -11,7 +11,7 @@ export default class StoreIndexRoute extends AbstractRouteRoute {
 
   @action delete(section) {
     if (section.products.length > 0) {
-      this.transitionTo('users');
+      this.transitionTo('store.delete-section', section.id);
     } else {
       section.destroyRecord();
     }

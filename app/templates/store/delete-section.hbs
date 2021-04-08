@@ -1,0 +1,12 @@
+{{page-title "DeleteSection"}}
+<div class="ui placeholder segment">
+  <div class="ui icon header">
+    <i class="question icon"></i>
+    La section "{{@model.sectionDelete.name}}" va être supprimée, mais elle comporte des produits, que voulez-vous faire de ces produits ?
+  </div>
+  <div class="inline">
+    <div class="ui green button" {{action "deleteAll" @model.sectionDelete.id}}>Supprimer ces produits</div>
+    <LinkTo class="ui negative button" @route="store.index">Annuler</LinkTo>
+  </div>
+</div>
+{{outlet}}
