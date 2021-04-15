@@ -15,13 +15,23 @@ export default class StoreAddRoute extends Route {
     });
   }
 
-  initUi(){
-    debugger;
-    console.log(jQuery('div'));
-    jQuery('.ui.modal').modal('show');
+  initUi() {
+    jQuery('.ui.modal')
+      .modal({
+        closable: false,
+        onDeny: function () {
+          return false;
+          this.transitionTo('store');
+        },
+        onApprove: function() {
+          return true;
+          this.transitionTo('store');
+        }
+      })
+      .modal('show');
   }
 
-  @action didTransition(){
-    Ember.run.next(this,'initUi');
+  @action didTransition() {
+    Ember.run.next(this, 'initUi');
   }
 }

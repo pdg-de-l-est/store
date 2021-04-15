@@ -11,6 +11,11 @@ export default class StoreAddPackRoute extends Route {
     });
   }
   @action save(p) {
+    var prix=0;
+    p.packs.forEach(element => {
+      prix = prix + element.prix;
+    })
+    p.promotion = prix-p.prix;
     let product = this.store.createRecord('product', p);
     product.save().then(() => {
       this.transitionTo('store');

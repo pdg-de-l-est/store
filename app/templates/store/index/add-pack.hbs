@@ -38,10 +38,6 @@
       <label>Prix</label>
       <Input @value={{@model.product.price}} type="number" name="price-produit" required="required" placeholder="Prix du pack"/>
     </div>
-    <div class="field">
-      <label>Promotion</label>
-      <Input @value={{@model.product.promotion}} type="number" name="promotion-produit" placeholder="Promotion du pack"/>
-    </div>
     <button type="submit" class="ui positive button">Valider</button>
     <LinkTo class="ui negative button" @route="store.index">Annuler</LinkTo>
   </form>

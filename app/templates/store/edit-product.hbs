@@ -14,10 +14,6 @@
       <label>Prix</label>
       <Input @value={{@model.productToEdit.price}} type="number" step="any" name="price-produit" required="required"/>
     </div>
-    <div class="field">
-      <label>Promotion</label>
-      <Input @value={{@model.productToEdit.promotion}} type="number" step="any" name="promotion-produit" required="required"/>
-    </div>
     <button class="ui positive button" type="submit">Modifier</button>
     <LinkTo class="ui negative button" @route="store.detail" @model={{@model.productToEdit.section.id}}>Annuler</LinkTo>
   </form>

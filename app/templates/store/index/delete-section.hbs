@@ -17,9 +17,11 @@
         <i class="dropdown icon"></i>
         <div class="menu">
           {{#each @model.sections as |section|}}
-            <div data-value="{{map-value mapper section}}" class="item">
-              {{section.name}}
-            </div>
+            {{#unless (eq section.name @model.sectionDelete.name)}}
+              <div data-value="{{map-value mapper section}}" class="item">
+                {{section.name}}
+              </div>
+            {{/unless}}
           {{/each}}
         </div>
       </UiDropdown>
