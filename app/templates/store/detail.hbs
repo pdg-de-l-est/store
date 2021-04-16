@@ -11,23 +11,24 @@
   {{#each @model.detailSection.products as |product|}}
     <div class="card">
       <div class="content">
-        {{product.name}}
+        <div class="header">{{product.name}}</div>
+        <div class="ui image">
+          <img src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />
+        </div>
+        <div class="meta">
+          Prix :  {{product.price}}€
+          {{#unless (eq product.promotion 0)}}
+            <div class="meta">
+              {{product.promotion}}%
+            </div>
+          {{/unless}}
+        </div>
+        {{#unless (eq product.comments "")}}
+          <p>{{product.comments}}</p>
+        {{/unless}}
       </div>
-      <div class="image" style="height: 200px">
-        <img src="/images/{{product.image}}.jpg" class="card-img-top" alt="" />
-      </div>
-      <div class="meta">
-        Prix :  {{product.price}}€
-      </div>
-      <div class="content">
-        {{product.comments}}
-      </div>
-      <div class="extra content">
-        <LinkTo class="ui button circular green icon" @route="store.detail.edit-product" @model={{product.id}}><i class="icon edit"></i></LinkTo>
-        <button {{action "delete" product.id}} class="circular ui icon red button">
-          <i class="icon delete"></i>
-        </button>
-      </div>
+      <LinkTo class="ui bottom attached button" @route="store.detail.edit-product" @model={{product.id}}><i class="icon edit"></i>Editer</LinkTo>
+      <button {{action "delete" product.id}} class="ui bottom attached button"><i class="icon delete"></i>Supprimer</button>
     </div>
   {{/each}}
 </div>
