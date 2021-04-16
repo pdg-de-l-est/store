@@ -1,5 +1,5 @@
 {{page-title "AddProduct"}}
-<div class="ui teal segment addForm" style="margin-top:53px;">
+{{#ui-modal class="ui modal"}}
   <form class="ui form" {{action "save" @model.product @model on="submit"}}>
     <h2>Ajouter un produit</h2>
     <div class="field">
@@ -25,6 +25,5 @@
     <button class="ui positive button" type="submit">Valider</button>
     <LinkTo class="ui negative button" @route="store.detail" @model={{@model.section.id}}>Annuler</LinkTo>
   </form>
-</div>
-
+{{/ui-modal}}
 {{outlet}}

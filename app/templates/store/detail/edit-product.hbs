@@ -1,5 +1,5 @@
 {{page-title "EditProduct"}}
-<div class="ui green segment addForm" style="margin-top:53px;">
+{{#ui-modal class="ui modal"}}
   <form class="ui form" {{action "save" @model.productToEdit @model.productToEdit.section.id on="submit"}}>
     <h2>Modifier le produit</h2>
     <div class="field">
@@ -17,5 +17,5 @@
     <button class="ui positive button" type="submit">Modifier</button>
     <LinkTo class="ui negative button" @route="store.detail" @model={{@model.productToEdit.section.id}}>Annuler</LinkTo>
   </form>
-</div>
+{{/ui-modal}}
 {{outlet}}

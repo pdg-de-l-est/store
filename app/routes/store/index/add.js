@@ -19,14 +19,6 @@ export default class StoreAddRoute extends Route {
     jQuery('.ui.modal')
       .modal({
         closable: false,
-        onDeny: function () {
-          return false;
-          this.transitionTo('store');
-        },
-        onApprove: function() {
-          return true;
-          this.transitionTo('store');
-        }
       })
       .modal('show');
   }

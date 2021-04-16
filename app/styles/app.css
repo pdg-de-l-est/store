@@ -85,7 +85,9 @@ body{
 }
 .modal{
   margin-top:1rem!important;
+  margin-left:auto!important;
   height:auto!important;
   padding:1rem;
   left:auto!important;
+  z-index: -1!important;
  }

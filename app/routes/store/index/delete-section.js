@@ -1,6 +1,8 @@
 import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 import { action } from '@ember/object';
+import jQuery from "jquery";
+import Ember from 'ember';
 
 export default class StoreDeleteSectionRoute extends Route {
   model(params) {
@@ -51,5 +53,18 @@ export default class StoreDeleteSectionRoute extends Route {
       p.section=secToChange;
       await p.save();
     }
+  }
+
+
+  initUi() {
+    jQuery('.ui.modal')
+      .modal({
+        closable: false,
+      })
+      .modal('show');
+  }
+
+  @action didTransition() {
+    Ember.run.next(this, 'initUi');
   }
 }

@@ -1,6 +1,8 @@
 import AbstractRouteRoute from '../abstract-route';
 import RSVP from 'rsvp';
 import { action } from '@ember/object';
+import jQuery from "jquery";
+import Ember from "ember";
 
 export default class StoreIndexRoute extends AbstractRouteRoute {
   model() {
@@ -15,5 +17,13 @@ export default class StoreIndexRoute extends AbstractRouteRoute {
     } else {
       section.destroyRecord();
     }
+  }
+
+  initUi() {
+    jQuery('.ui.modal').modal('hideAll');
+  }
+
+  @action didTransition() {
+    Ember.run.next(this, 'initUi');
   }
 }

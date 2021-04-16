@@ -1,11 +1,11 @@
 {{page-title "Detail"}}
-<h4 class="ui horizontal divider header" style="margin-top:53px;">
+<h4 class="ui horizontal divider header">
   <i class="box icon"></i>
   Section : {{@model.detailSection.name}}
 </h4>
 <div>
   <LinkTo class="ui button" @route="store.index">Retour aux sections</LinkTo>
-  <LinkTo class="ui button" @route="store.add-product" @model={{@model.detailSection.id}}>Ajouter un produit</LinkTo>
+  <LinkTo class="ui button" @route="store.detail.add-product" @model={{@model.detailSection.id}}>Ajouter un produit</LinkTo>
 </div>
 <div class="ui seven cards cartesSection">
   {{#each @model.detailSection.products as |product|}}
@@ -23,7 +23,7 @@
         {{product.comments}}
       </div>
       <div class="extra content">
-        <LinkTo class="ui button circular green icon" @route="store.edit-product" @model={{product.id}}><i class="icon edit"></i></LinkTo>
+        <LinkTo class="ui button circular green icon" @route="store.detail.edit-product" @model={{product.id}}><i class="icon edit"></i></LinkTo>
         <button {{action "delete" product.id}} class="circular ui icon red button">
           <i class="icon delete"></i>
         </button>

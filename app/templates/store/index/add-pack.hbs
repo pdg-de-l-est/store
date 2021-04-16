@@ -1,5 +1,5 @@
 {{page-title "AddPack"}}
-<div class="ui teal segment addForm" style="margin-top:53px;">
+{{#ui-modal class="ui modal"}}
   <form class="ui form" {{action "save" @model.product on="submit"}}>
     <h2>Ajouter un pack</h2>
     <div class="field">
@@ -41,5 +41,5 @@
     <button type="submit" class="ui positive button">Valider</button>
     <LinkTo class="ui negative button" @route="store.index">Annuler</LinkTo>
   </form>
-</div>
+{{/ui-modal}}
 {{outlet}}

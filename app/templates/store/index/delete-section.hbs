@@ -1,17 +1,14 @@
 {{page-title "DeleteSection"}}
-  <div class="ui clearing segment" style="margin-top:53px;">
+{{#ui-modal class="ui modal segment center aligned"}}
     <div class="ui icon header center aligned">
       <i class="question icon"></i>
       La section "{{@model.sectionDelete.name}}" va être supprimée, mais elle comporte des produits, que voulez-vous faire de ces {{@model.sectionDelete.products.length}} produits ? La section sera ensuite supprimée.
     </div>
-    <div class="inline">
-      <div class="ui green button" {{action "deleteAll" @model.sectionDelete.id}}>Supprimer ces produits</div>
-    </div>
+    <div class="ui green button" style="margin-top: 1rem;" {{action "deleteAll" @model.sectionDelete.id}}>Supprimer ces produits</div>
     <div class="ui horizontal divider">
       Ou
     </div>
-    <div class="inline">
-      <form {{action "changeAll" @model.sectionDelete.id @model.secToChange on="submit"}}>
+      <form style="z-index: 999!important;" {{action "changeAll" @model.sectionDelete.id @model.secToChange on="submit"}}>
       <UiDropdown class="selection search" @selected={{@model.secToChange}} @onChange={{fn (mut @model.secToChange)}} as |execute mapper|>
         <div class="default text">Section</div>
         <i class="dropdown icon"></i>
@@ -27,7 +24,6 @@
       </UiDropdown>
       <button class="ui orange button" type="submit">Les déplacer dans une autre catégorie</button>
       </form>
-    </div>
     <UiProgress @percent="{{this.percent}}" @total="{{this.taille}}" class="teal indicating">
       <div class="bar"></div>
     </UiProgress>
@@ -35,5 +31,5 @@
       <img src="/images/{{this.activeImg}}.jpg" class="ui medium image">
     {{/if}}
     <LinkTo class="ui negative button right floated" @route="store.index">Annuler</LinkTo>
-  </div>
+{{/ui-modal}}
 {{outlet}}
