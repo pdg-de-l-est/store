@@ -27,7 +27,11 @@
           <p>{{product.comments}}</p>
         {{/unless}}
       </div>
-      <LinkTo class="ui bottom attached button" @route="store.detail.edit-product" @model={{product.id}}><i class="icon edit"></i>Editer</LinkTo>
+      {{#if (eq product.comments "")}}
+        <LinkTo class="ui bottom attached button" @route="store.detail.edit-pack" @model={{product.id}}><i class="icon edit"></i>Editer</LinkTo>
+      {{else}}
+        <LinkTo class="ui bottom attached button" @route="store.detail.edit-product" @model={{product.id}}><i class="icon edit"></i>Editer</LinkTo>
+      {{/if}}
       <button {{action "delete" product.id}} class="ui bottom attached button"><i class="icon delete"></i>Supprimer</button>
     </div>
   {{/each}}
