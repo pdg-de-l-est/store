@@ -12,5 +12,6 @@ export default class ApplicationRoute extends AbstractRouteRoute {
   }
   @action logout() {
     this.userAuth.logout();
+    this.transitionTo('application');
   }
 }

@@ -1,2 +1,14 @@
 {{page-title "Accueil"}}
+<div class="ui teal segment center aligned">
+  <h1 class="ui header">Gestion interne du store</h1>
+  <div class="ui divider"></div>
+  {{#each @model.employees as |employee|}}
+    {{#if (eq @model.connected.email employee.email)}}
+      <h4>Bienvenue {{employee.name}}</h4>
+    {{/if}}
+  {{/each}}
+  <div class="ui image">
+    <img src="/images/logo.png" alt="" />
+  </div>
+</div>
 {{outlet}}
