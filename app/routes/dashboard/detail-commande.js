@@ -15,4 +15,11 @@ export default class DashboardDetailCommandeRoute extends AbstractRouteRoute {
   @action save(orderdetails) {
     orderdetails.save();
   }
+
+  @action valider(order){
+    order.status = "prepared";
+    order.save().then(() => {
+      this.transitionTo('detail-commande');
+    });
+  }
 }

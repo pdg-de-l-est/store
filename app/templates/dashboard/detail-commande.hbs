@@ -22,6 +22,10 @@
        </div>
      </div>
    {{/each}}
+    <button {{action "valider" @model.order on="click"}} class="circular ui icon green button">
+      <i class="icon thumbs up"></i>
+      Valider la Commande
+    </button>
   </div>
 </div>
 {{outlet}}
