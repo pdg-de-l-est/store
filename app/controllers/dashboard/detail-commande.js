@@ -10,5 +10,7 @@ export default class DashboardDetailCommandeController extends Controller {
     console.log('Test');
   }
 
+  
+
 
 }
