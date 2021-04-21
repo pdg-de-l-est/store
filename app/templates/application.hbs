@@ -1,37 +1,33 @@
 {{page-title "Store"}}
-  <div class="ui inverted secondary pointing menu" style="margin:0;top :0;z-index: 100;width: 100vw;background-color: #444">
-    <a class="ui item" href="../../../../accueil">
-      Accueil
-    </a>
-    <a class="ui item" href="../../../../gestionStock">
-      Gestion du Stock
-    </a>
-    <a class="ui item" href="../../../../store/index">
-      Gestion du Store
-    </a>
-    <a class="ui item" href="../../../../dashboard">
-      Gestion des Commandes
-    </a>
-    <a class="ui item" href="../../../../gestionEmployee">
-      Gestion des Employés
-    </a>
-    {{#if @model.connected.email}}
-      <div>
-        <a class="ui item" href="../../../../">
-          <div class="ui label">{{@model.connected.email}}</div>
-        </a>
-      </div>
-      <div class="right menu">
-        <a {{action "logout" on="click"}} class="ui item" href="../../../../">
-          <div class="ui label">Logout</div>
-        </a>
-      </div>
-    {{else}}
-      <div class="right menu">
-        <a class="ui item" href="../../../../">
-          <div class="ui label">Login</div>
-        </a>
-      </div>
-    {{/if}}
-  </div>
+<div class="ui inverted secondary pointing menu"
+     style="margin:0;position: fixed;top :0;z-index: 100;width: 100vw;background-color: #444">
+  <a class="ui item" href="../../../../accueil">
+    Accueil
+  </a>
+  <a class="ui item" href="../../../../gestionStock">
+    Gestion du Stock
+  </a>
+  <a class="ui item" href="../../../../store">
+    Gestion du Store
+  </a>
+  <a class="ui item" href="../../../../dashboard">
+    Gestion des Commandes
+  </a>
+  <a class="ui item" href="../../../../gestionEmployee">
+    Gestion des Employés
+  </a>
+  {{#if @model.connected.email}}
+    <div class="right menu">
+      <button class="ui item" {{action "logout" on="click"}}>
+        <div class="ui label">Logout : {{@model.connected.email}}</div>
+      </button>
+    </div>
+  {{else}}
+    <div class="right menu">
+      <a class="ui item" href="../../../../">
+        <div class="ui label">Login</div>
+      </a>
+    </div>
+  {{/if}}
+</div>
 {{outlet}}

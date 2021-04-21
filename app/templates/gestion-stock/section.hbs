@@ -1,17 +1,17 @@
 {{page-title "Section"}}
 <form {{action "multiUpdate" @model.section.products this._stock on="submit"}}>
-  <div class="ui small action input" style="top: 47px;margin-left: 266px;position: fixed;z-index: 100;background-color:white;width: 100%;border:10px white solid">
+  <div class="ui small action input" style="top: 47px;margin-left: 266px;position: fixed;z-index: 100;background-color:white;width: 100%;border:6px white solid">
     <div class="ui right pointing label">
       Ajout de stock pour plusieurs objets à la fois
     </div>
-    <Input @value={{this._stock}} type="number" required="required" placeholder="Ajouter" />
+    <Input @value={{this._stock}} type="number" required="required" style="flex: none !important;" placeholder="Ajouter" />
     <button class="ui icon button" type="submit">
       <i class="plus icon"></i>
     </button>
   </div>
 </form>
 <br>
-<div class="ui seven doubling cards" style="margin-left:266px;padding-top: 90px">
+<div class="ui seven doubling cards" style="margin-left:266px;padding-top: 84px">
   {{#each @model.section.products as |product|}}
     <div class="card" style="float: left">
       <div class="content">
