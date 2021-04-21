@@ -3,7 +3,7 @@
   <h1>Préparation de commande</h1>
   Commande N°{{@model.order.id}}  
   <div style="float:right">{{@model.order.itemsNumber}} Produits 
-    <div class="ui toggle checkbox"><Input @type="checkbox"  /><label>Tout Préparés</label>
+    <div class="ui checkbox"><Input @type="checkbox" {{action "prepareAll" @model.order on="change"}}/><label>Tout Préparés</label>
     </div>
   </div>
   <div class="ui celled  ordered list">
