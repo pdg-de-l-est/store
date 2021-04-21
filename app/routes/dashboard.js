@@ -9,4 +9,11 @@ export default class DashboardRoute extends AbstractRouteRoute {
       connected: this.userAuth.user,
     });
   }
+
+  @action delete(orderToDelete) {
+    let order = this.store.peekRecord('order', orderToDelete);
+    order.destroyRecord().then(() => {
+      this.transitionTo('dashboard');
+    });
+  }
 }

@@ -1,17 +1,31 @@
 {{page-title "DetailCommande"}}
 <div class="ui segment">
   <h1>Préparation de commande</h1>
-  Commande N°{{@model.order.id}}  <div style="float:right">{{@model.order.itemsNumber}} Produits <div class="ui toggle checkbox"><Input @type="checkbox"  /><label>Tout Préparés</label></div></div>
+  Commande N°{{@model.order.id}}  
+  <div style="float:right">{{@model.order.itemsNumber}} Produits 
+    <div class="ui toggle checkbox"><Input @type="checkbox"  /><label>Tout Préparés</label>
+    </div>
+  </div>
   <div class="ui celled  ordered list">
     {{#each this.sections as |section|}}
      <div class="item">{{section.value}}
        <div class="list">
          {{#each section.items as |od|}}
-           <div class="item">{{od.product.name}}   Prix : {{od.product.price}} €<div style="float:right; margin: 1%">Quantity : {{od.quantity}}<div class="ui toggle checkbox"><Input @type="checkbox" checked="{{if od.prepared 'checked'}}" onclick="{{action (mut od.prepared) value="target.checked"}}"/><label>Préparé</label></div> </div></div>
+           <div class="item">{{od.product.name}}   Prix : {{od.product.price}} €
+             <div style="float:right; margin: 0%">Quantité : {{od.quantity}}
+               <div class="ui toggle checkbox"><Input @type="checkbox" @checked={{ od.prepared}} {{action "save" od on="change"}} />
+              <label>{{if od.prepared "Préparé" "Non Préparé"}}</label>
+              </div>
+            </div>
+           </div><br>
          {{/each}}
        </div>
      </div>
    {{/each}}
+    <button {{action "valider" @model.order on="click"}} class="circular ui icon green button">
+      <i class="icon thumbs up"></i>
+      Valider la Commande
+    </button>
   </div>
 </div>
 {{outlet}}
