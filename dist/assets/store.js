@@ -29,7 +29,7 @@
     constructor(...args) {
       super(...args);
 
-      _defineProperty(this, "host", ' https://pdg-est.sts-sio-caen.info/rest');
+      _defineProperty(this, "host", ' http://pdg-est-1.sts-sio-caen.info/rest');
     }
 
   }
@@ -2976,7 +2976,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("store/app")["default"].create({"name":"store","version":"0.0.0+7692769e"});
+            require("store/app")["default"].create({"name":"store","version":"0.0.0+ad858deb"});
           }
         
 //# sourceMappingURL=store.map
