@@ -2976,7 +2976,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("store/app")["default"].create({"name":"store","version":"0.0.0+ad858deb"});
+            require("store/app")["default"].create({"name":"store","version":"0.0.0+f8412880"});
           }
         
 //# sourceMappingURL=store.map
