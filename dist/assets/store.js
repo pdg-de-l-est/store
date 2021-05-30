@@ -29,7 +29,7 @@
     constructor(...args) {
       super(...args);
 
-      _defineProperty(this, "host", 'http://127.0.0.1:8090/rest');
+      _defineProperty(this, "host", 'https://pdg-est-1.sts-sio-caen.info/rest');
     }
 
   }
@@ -3010,7 +3010,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("store/app")["default"].create({"name":"store","version":"0.0.0+a6198e89"});
+            require("store/app")["default"].create({"name":"store","version":"0.0.0+9ec4bd8b"});
           }
         
 //# sourceMappingURL=store.map
