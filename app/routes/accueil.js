@@ -7,5 +7,6 @@ export default class AccueilRoute extends AbstractRouteRoute {
       employees: this.store.findAll('employee', { include: 'orders' }),
       connected: this.userAuth.user,
     });
+    
   }
 }

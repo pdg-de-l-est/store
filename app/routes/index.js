@@ -7,6 +7,7 @@ export default class IndexRoute extends Route {
 
   model() {
     return {};
+    
   }
 
   @action login(user) {
@@ -25,5 +26,6 @@ export default class IndexRoute extends Route {
           }
         }
       });
+      ;
   }
 }
