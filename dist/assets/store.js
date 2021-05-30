@@ -29,7 +29,7 @@
     constructor(...args) {
       super(...args);
 
-      _defineProperty(this, "host", 'https://pdg-est-1.sts-sio-caen.info/rest');
+      _defineProperty(this, "host", 'http://127.0.0.1:8090/rest');
     }
 
   }
@@ -282,6 +282,39 @@
       return _welcomePage.default;
     }
   });
+});
+;define("store/controllers/application", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _dec, _class, _descriptor;
+
+  function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
+
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
+
+  function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and runs after the decorators transform.'); }
+
+  let ApplicationController = (_dec = Ember.inject.service, (_class = class ApplicationController extends Ember.Controller {
+    constructor(...args) {
+      super(...args);
+
+      _initializerDefineProperty(this, "userAuth", _descriptor, this);
+    }
+
+  }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "userAuth", [_dec], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: null
+  })), _class));
+  _exports.default = ApplicationController;
 });
 ;define("store/controllers/dashboard/detail-commande", ["exports", "ember-group-by"], function (_exports, _emberGroupBy) {
   "use strict";
@@ -2588,8 +2621,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "tGND/aHH",
-    "block": "[[[1,[28,[35,0],[\"Store\"],null]],[1,\"\\n\"],[41,[30,1,[\"connected\"]],[[[10,0],[14,0,\"ui inverted secondary pointing menu\"],[14,5,\"margin:0;position: fixed;top :0;z-index: 100;width: 100vw;background-color: #444\"],[12],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../accueil\"],[12],[1,\"\\n    Accueil\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../gestionStock\"],[12],[1,\"\\n    Gestion du Stock\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../store/index\"],[12],[1,\"\\n    Gestion du Store\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../dashboard\"],[12],[1,\"\\n    Gestion des Commandes\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../gestionEmployee\"],[12],[1,\"\\n    Gestion des Employés\\n  \"],[13],[1,\"\\n\"],[41,[30,1,[\"connected\",\"email\"]],[[[1,\"    \"],[10,0],[14,0,\"right menu\"],[12],[1,\"\\n      \"],[11,\"button\"],[24,0,\"ui item\"],[4,[38,2],[[30,0],\"logout\"],[[\"on\"],[\"click\"]]],[12],[1,\"\\n        \"],[10,0],[14,0,\"ui label\"],[12],[1,\"Logout : \"],[1,[30,1,[\"connected\",\"email\"]]],[13],[1,\"\\n      \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]],[[[1,\"    \"],[10,0],[14,0,\"right menu\"],[12],[1,\"\\n      \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../\"],[12],[1,\"\\n        \"],[10,0],[14,0,\"ui label\"],[12],[1,\"Login\"],[13],[1,\"\\n      \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]]],[13],[1,\"\\n\"]],[]],null],[46,[28,[37,4],null,null],null,null,null]],[\"@model\"],false,[\"page-title\",\"if\",\"action\",\"component\",\"-outlet\"]]",
+    "id": "3VAG0wb+",
+    "block": "[[[1,[28,[35,0],[\"Store\"],null]],[1,\"\\n\"],[41,[30,0,[\"userAuth\",\"user\"]],[[[10,0],[14,0,\"ui inverted secondary pointing menu\"],[14,5,\"margin:0;position: fixed;top :0;z-index: 100;width: 100vw;background-color: #444\"],[12],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../accueil\"],[12],[1,\"\\n    Accueil\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../gestionStock\"],[12],[1,\"\\n    Gestion du Stock\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../store/index\"],[12],[1,\"\\n    Gestion du Store\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../dashboard\"],[12],[1,\"\\n    Gestion des Commandes\\n  \"],[13],[1,\"\\n  \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../gestionEmployee\"],[12],[1,\"\\n    Gestion des Employés\\n  \"],[13],[1,\"\\n\"],[41,[30,1,[\"connected\",\"email\"]],[[[1,\"    \"],[10,0],[14,0,\"right menu\"],[12],[1,\"\\n      \"],[11,\"button\"],[24,0,\"ui item\"],[4,[38,2],[[30,0],\"logout\"],[[\"on\"],[\"click\"]]],[12],[1,\"\\n        \"],[10,0],[14,0,\"ui label\"],[12],[1,\"Logout : \"],[1,[30,1,[\"connected\",\"email\"]]],[13],[1,\"\\n      \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]],[[[1,\"    \"],[10,0],[14,0,\"right menu\"],[12],[1,\"\\n      \"],[10,3],[14,0,\"ui item\"],[14,6,\"../../../../\"],[12],[1,\"\\n        \"],[10,0],[14,0,\"ui label\"],[12],[1,\"Login\"],[13],[1,\"\\n      \"],[13],[1,\"\\n    \"],[13],[1,\"\\n\"]],[]]],[13],[1,\"\\n\"]],[]],null],[46,[28,[37,4],null,null],null,null,null]],[\"@model\"],false,[\"page-title\",\"if\",\"action\",\"component\",\"-outlet\"]]",
     "moduleName": "store/templates/application.hbs",
     "isStrictMode": false
   });
@@ -2977,7 +3010,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("store/app")["default"].create({"name":"store","version":"0.0.0+3bf985d2"});
+            require("store/app")["default"].create({"name":"store","version":"0.0.0+a6198e89"});
           }
         
 //# sourceMappingURL=store.map
