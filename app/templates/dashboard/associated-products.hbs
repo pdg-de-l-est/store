@@ -1,0 +1,25 @@
+{{page-title "AssociatedProducts"}}
+{{#ui-modal class="ui modal"}}
+  {{#each @model.detailSection.associatedproducts as |assoProd|}}
+    <div class="ui three stackable cards">
+      <div class="ui card">
+        <div class="header">{{assoProd.name}}</div>
+        <div class="ui image">
+          <img src="/images/{{assoProd.image}}.jpg" class="card-img-top" alt="" />
+        </div>
+        <div class="meta">
+          Prix :  {{assoProd.price}}€
+          {{#unless (eq assoProd.promotion 0)}}
+            <div class="meta">
+              {{assoProd.promotion}}%
+            </div>
+          {{/unless}}
+        </div>
+        {{#unless (eq product.comments "")}}
+          <p>{{product.comments}}</p>
+        {{/unless}}
+    </div>
+  {{/each}}
+    <LinkTo class="ui negative button" @route="dashboard">Annuler</LinkTo>
+{{/ui-modal}}
+{{outlet}}

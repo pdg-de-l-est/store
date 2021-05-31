@@ -1,6 +1,8 @@
 import AbstractRouteRoute from '../abstract-route';
 import RSVP from 'rsvp';
 import { action, set } from '@ember/object';
+import jQuery from "jquery";
+import Ember from "ember-source/dist/packages/@ember/-internals/runtime/lib/mixins/-proxy";
 
 export default class DashboardDetailCommandeRoute extends AbstractRouteRoute {
   model(params) {
@@ -49,4 +51,12 @@ export default class DashboardDetailCommandeRoute extends AbstractRouteRoute {
     });
   }
  }
+
+  initUi() {
+    jQuery('.ui.modal').modal('hideAll');
+  }
+
+  @action didTransition() {
+    Ember.run.next(this, 'initUi');
+  }
 }

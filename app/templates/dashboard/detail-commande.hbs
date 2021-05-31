@@ -1,8 +1,11 @@
 {{page-title "DetailCommande"}}
 <div class="ui segment">
   <h1>Préparation de commande</h1>
-  Commande N°{{@model.order.id}}  
-  <div style="float:right">{{@model.order.itemsNumber}} Produits 
+  Commande N°{{@model.order.id}}
+  <div style="float:right">{{@model.order.itemsNumber}} Produits
+    {{#unless (eq @model.order.missingNumber 0)}}
+      <p>{{@model.order.missingNumber}} produit(s) manquant(s)</p>
+    {{/unless}}
     <div class="ui checkbox"><Input @type="checkbox" {{action "prepareAll" @model.order on="change"}}/><label>Tout Préparés</label>
     </div>
   </div>
@@ -11,9 +14,12 @@
      <div class="item">{{section.value}}
        <div class="list">
          {{#each section.items as |od|}}
-           <div class="item">{{od.product.name}}   Prix : {{od.product.price}} €
+           <div class="item">{{od.product.name}}   Prix : {{od.product.price}} €   Stock : {{od.product.stock}}
+             {{#if (gt @model.order.quantity od.product.stock)}}
+               <LinkTo class="ui button" @route="dashboard.index" @model={{od.product.id}}>Produits similaires</LinkTo>
+             {{/if}}
              <div style="float:right; margin: 0%">Quantité : {{od.quantity}}
-               <div class="ui toggle checkbox"><Input @type="checkbox" @checked={{ od.prepared}} {{action "save" od on="change"}} />
+               <div class="ui toggle checkbox"><Input @type="checkbox" @checked={{od.prepared}} {{action "save" od on="change"}} />
               <label>{{if od.prepared "Préparé" "Non Préparé"}}</label>
               </div>
             </div>
